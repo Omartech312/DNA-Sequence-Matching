@@ -26,3 +26,7 @@ Splits the genome into 32-character segments and stores them in a Hash Table usi
 ### Smith-Waterman (Option 1)
 - This approach creates a 2D array with dimensions n x G, attempting to find partial matches between the queries and the genome.
 - Allows partial matching, but it's inefficient, as it requires computing Smith-Waterman for each Query against the entire Genome.
+
+### BLAST (Option 2)
+- Creates a Hash table using the RADIX of K-mers (sections of a 32-character query) and stores their location on the Genome.
+- The location is used to compare the next 32 characters from the Genome against the query with Smith-Waterman; this allows for partial matching, without having to compare the entire genome against each query every single time.
